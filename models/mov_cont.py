@@ -1,6 +1,6 @@
 class movimiento_contable:
 
-    def _init_(self, COD, Tipo, Fecha, Monto, Descripcion, Venta, Compra):
+    def __init__(self, COD, Tipo, Fecha, Monto, Descripcion, Venta, Compra):
         self.COD_Movimiento_Contable        = COD
         self.MVC_Tipo                       =Tipo
         self.MVC_Fecha                      =Fecha
