@@ -1,7 +1,7 @@
-from flask import blueprint
+from flask import Blueprint
 from controllers.cliente_controler import cntListado
 
-cliente_bp = blueprint ('cliente', __name__)
+cliente_bp = Blueprint ('cliente', __name__)
 
 
 @cliente_bp.route('/')
