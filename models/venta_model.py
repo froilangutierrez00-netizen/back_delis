@@ -1,20 +1,31 @@
     
-class ventas:    
-    def __init__(self,cod_venta,ven_domi,ven_est,ven_fech_entre,ven_detalle,id_cliente):
-        self.COD_Venta = cod_venta
-        self.Ven_Domiciliario = ven_domi
-        self.VEN_Estado = ven_est
-        self.VEN_Fecha_Entrega = ven_fech_entre
-        self.VEN_Detalle = ven_detalle
-        self.ID_Cliente = id_cliente
-    
-    def todic(self):
-        return{
-            "cod_venta" : self.COD_Venta ,
-            "ven_domi" : self.Ven_Domiciliario ,
-            "ven_est" : self.VEN_Estado ,
-            "ven_fech_entre" : self.VEN_Fecha_Entrega ,
-            "ven_detalle" : self.VEN_Detalle,
-            "id_cliente" : self.ID_Cliente
-            
-        } 
+class Ventas:
+    def __init__(self, id, cliente_id, corte_id, usuario_id, nombre_cliente, 
+                 fecha_venta, fecha_entrega, total, total_abonado, 
+                 saldo_pendiente, estado):
+        self.id = id
+        self.cliente_id = cliente_id
+        self.corte_id = corte_id
+        self.usuario_id = usuario_id
+        self.nombre_cliente = nombre_cliente
+        self.fecha_venta = fecha_venta
+        self.fecha_entrega = fecha_entrega
+        self.total = total
+        self.total_abonado = total_abonado
+        self.saldo_pendiente = saldo_pendiente
+        self.estado = estado
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "cliente_id": self.cliente_id,
+            "corte_id": self.corte_id,
+            "usuario_id": self.usuario_id,
+            "nombre_cliente": self.nombre_cliente,
+            "fecha_venta": str(self.fecha_venta),
+            "fecha_entrega": str(self.fecha_entrega),
+            "total": float(self.total),
+            "total_abonado": float(self.total_abonado),
+            "saldo_pendiente": float(self.saldo_pendiente),
+            "estado": self.estado
+        }
